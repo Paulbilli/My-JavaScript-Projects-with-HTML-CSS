@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poll</title>
+  <link rel="stylesheet" href="style.css" />
+ </head>
+ <body>
+  <div class="wrapper">
+   <header>Poll UI Design</header>
+   <div class="poll-area">
+    <label for="">
+     <div class="row">
+      <div class="column">
+       <span class="circle"></span>
+       <span class="text">HTML</span>
+      </div>
+      <span class="percent">30%</span>
+     </div>
+     <div class="progress" style="--w: 30"></div>
+    </label>
+    <label for="">
+     <div class="row">
+      <div class="column">
+       <span class="circle"></span>
+       <span class="text">JavaScript</span>
+      </div>
+      <span class="percent">50%</span>
+     </div>
+     <div class="progress" style="--w: 50"></div>
+    </label>
+    <label for="">
+     <div class="row">
+      <div class="column">
+       <span class="circle"></span>
+       <span class="text">Python</span>
+      </div>
+      <span class="percent">80%</span>
+     </div>
+     <div class="progress" style="--w: 80"></div>
+    </label>
+    <label for="">
+     <div class="row">
+      <div class="column">
+       <span class="circle"></span>
+       <span class="text">Java</span>
+      </div>
+      <span class="percent">20%</span>
+     </div>
+     <div class="progress" style="--w: 20"></div>
+    </label>
+   </div>
+  </div>
+
+  <script>
+   const options = document.querySelectorAll("label");
+
+   for (let i = 0; i < options.length; i++) {
+    options[i].onclick = () => {
+     for (let k = 0; k < options.length; k++) {
+      if (options[k].classList.contains("selected")) {
+       options[k].classList.remove("selected");
+      }
+     }
+     options[i].classList.add("selected");
+     for (let j = 0; j < options.length; j++) {
+      options[j].classList.add("selectall");
+     }
+    };
+   }
+  </script>
+ </body>
+</html>
